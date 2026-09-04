@@ -12,7 +12,7 @@ export const I18nProvider = ({ children }) => {
   useEffect(() => {
     const fetchI18n = async () => {
       try {
-        const response = await fetch('/i18n.json');
+        const response = await fetch(`${import.meta.env.BASE_URL}i18n.json`);
         const data = await response.json();
         setI18nData(data);
       } catch (e) {

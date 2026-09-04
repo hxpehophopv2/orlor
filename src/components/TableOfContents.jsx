@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useI18n } from '../context/I18nContext';
 
 const toc2_th = [
@@ -64,7 +64,7 @@ const toc4_en = [
 ];
 
 const TableOfContents = () => {
-  const { tHtml, currentLang } = useI18n();
+  const { tHtml, currentLang, changeLanguage } = useI18n();
   const location = useLocation();
   const isClass2 = location.pathname.includes('class2');
   const isClass3 = location.pathname.includes('class3');
@@ -74,55 +74,114 @@ const TableOfContents = () => {
   const toc3 = currentLang === 'en' ? toc3_en : toc3_th;
   const toc4 = currentLang === 'en' ? toc4_en : toc4_th;
 
+  const renderNavLinks = () => (
+    <div className="sidebar-nav-pills" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+      <div className="toc-title" style={{ marginTop: 0 }}>Settings & Navigation</div>
+      
+      <div
+        className="lang-switcher"
+        style={{
+          display: "flex",
+          background: "rgba(0,0,0,0.05)",
+          borderRadius: "20px",
+          padding: "4px",
+          marginBottom: "12px",
+        }}
+      >
+        <button
+          onClick={() => changeLanguage("en")}
+          style={{
+            flex: 1,
+            background: currentLang === "en" ? "var(--orange)" : "transparent",
+            border: "none",
+            borderRadius: "16px",
+            color: currentLang === "en" ? "#fff" : "var(--ink-soft)",
+            padding: "6px 0",
+            fontSize: "0.75rem",
+            fontWeight: 700,
+            cursor: "pointer",
+            transition: "all 0.2s"
+          }}
+        >
+          EN
+        </button>
+        <button
+          onClick={() => changeLanguage("th")}
+          style={{
+            flex: 1,
+            background: currentLang === "th" ? "var(--orange)" : "transparent",
+            border: "none",
+            borderRadius: "16px",
+            color: currentLang === "th" ? "#fff" : "var(--ink-soft)",
+            padding: "6px 0",
+            fontSize: "0.75rem",
+            fontWeight: 700,
+            cursor: "pointer",
+            transition: "all 0.2s"
+          }}
+        >
+          TH
+        </button>
+      </div>
+
+      <hr style={{ border: 0, height: 1, background: 'rgba(0,0,0,0.08)', margin: '4px 0 12px 0' }} />
+
+      <Link
+        to="/class1"
+        className={`class-pill ${location.pathname.includes("class1") ? "active" : ""}`}
+        style={{ textDecoration: "none", width: '100%', boxSizing: 'border-box' }}
+        dangerouslySetInnerHTML={tHtml("t_3")}
+      />
+      <Link
+        to="/class2"
+        className={`class-pill ${location.pathname.includes("class2") ? "active" : ""}`}
+        style={{ textDecoration: "none", width: '100%', boxSizing: 'border-box' }}
+        dangerouslySetInnerHTML={tHtml("t_4")}
+      />
+      <Link
+        to="/class3"
+        className={`class-pill ${location.pathname.includes("class3") ? "active" : ""}`}
+        style={{ textDecoration: "none", width: '100%', boxSizing: 'border-box' }}
+        dangerouslySetInnerHTML={tHtml("t_5")}
+      />
+      <Link
+        to="/class4"
+        className={`class-pill ${location.pathname.includes("class4") ? "active" : ""}`}
+        style={{ textDecoration: "none", width: '100%', boxSizing: 'border-box' }}
+        dangerouslySetInnerHTML={tHtml("t_6")}
+      />
+      <Link
+        to="/class5"
+        className={`class-pill locked`}
+        style={{ textDecoration: "none", width: '100%', boxSizing: 'border-box', opacity: 0.6 }}
+        data-msg={currentLang === "en" ? "Not available yet" : "ยังไม่ถึงเวลาเรียน"}
+        dangerouslySetInnerHTML={tHtml("t_7")}
+      />
+    </div>
+  );
+
+  let tocTitle;
+  let tocList;
+
   if (isClass4) {
-    return (
-      <aside className="sidebar" id="sidebar">
-        <div className="toc-title">
-          {currentLang === 'en' ? 'Class 4 · Backend + DBMS' : 'สารบัญคลาส 4 · Backend + DBMS'}
-        </div>
-        <ul className="toc" id="tocList">
-          {toc4.map(item => (
-            <li key={item.href}><a href={item.href}>{item.label}</a></li>
-          ))}
-        </ul>
-      </aside>
-    );
-  }
-
-  if (isClass3) {
-    return (
-      <aside className="sidebar" id="sidebar">
-        <div className="toc-title">
-          {currentLang === 'en' ? 'Class 3 · Deploy Static Web' : 'สารบัญคลาส 3 · Deploy Static Web'}
-        </div>
-        <ul className="toc" id="tocList">
-          {toc3.map(item => (
-            <li key={item.href}><a href={item.href}>{item.label}</a></li>
-          ))}
-        </ul>
-      </aside>
-    );
-  }
-
-  if (isClass2) {
-    return (
-      <aside className="sidebar" id="sidebar">
-        <div className="toc-title">
-          {currentLang === 'en' ? 'Class 2 · Managing Processes' : 'สารบัญคลาส 2 · Managing Processes'}
-        </div>
-        <ul className="toc" id="tocList">
-          {toc2.map(item => (
-            <li key={item.href}><a href={item.href}>{item.label}</a></li>
-          ))}
-        </ul>
-      </aside>
-    );
-  }
-
-  return (
-    <aside className="sidebar" id="sidebar">
-      <div className="toc-title" dangerouslySetInnerHTML={tHtml('t_8')} />
-      <ul className="toc" id="tocList">
+    tocTitle = currentLang === 'en' ? 'Class 4 · Backend + DBMS' : 'สารบัญคลาส 4 · Backend + DBMS';
+    tocList = toc4.map(item => (
+      <li key={item.href}><a href={item.href}>{item.label}</a></li>
+    ));
+  } else if (isClass3) {
+    tocTitle = currentLang === 'en' ? 'Class 3 · Deploy Static Web' : 'สารบัญคลาส 3 · Deploy Static Web';
+    tocList = toc3.map(item => (
+      <li key={item.href}><a href={item.href}>{item.label}</a></li>
+    ));
+  } else if (isClass2) {
+    tocTitle = currentLang === 'en' ? 'Class 2 · Managing Processes' : 'สารบัญคลาส 2 · Managing Processes';
+    tocList = toc2.map(item => (
+      <li key={item.href}><a href={item.href}>{item.label}</a></li>
+    ));
+  } else {
+    tocTitle = <span dangerouslySetInnerHTML={tHtml('t_8')} />;
+    tocList = (
+      <>
         <li><a href="#intro" dangerouslySetInnerHTML={tHtml('t_9')} /></li>
         <li><a href="#anatomy" dangerouslySetInnerHTML={tHtml('t_10')} /></li>
         <li><a href="#history" dangerouslySetInnerHTML={tHtml('t_11')} /></li>
@@ -135,6 +194,16 @@ const TableOfContents = () => {
         <li><a href="#services" dangerouslySetInnerHTML={tHtml('t_18')} /></li>
         <li><a href="#quiz" dangerouslySetInnerHTML={tHtml('t_19')} /></li>
         <li><a href="#cheatsheet" dangerouslySetInnerHTML={tHtml('t_20')} /></li>
+      </>
+    );
+  }
+
+  return (
+    <aside className="sidebar" id="sidebar">
+      {renderNavLinks()}
+      <div className="toc-title">{tocTitle}</div>
+      <ul className="toc" id="tocList">
+        {tocList}
       </ul>
     </aside>
   );

@@ -71,6 +71,27 @@ button{font-family:inherit;}
 .class-pill.active{background:var(--orange); border-color:var(--orange); color:#fff; font-weight:700;}
 .class-pill.locked{cursor:pointer;}
 .class-pill.locked:hover{border-color:rgba(255,255,255,.6);}
+
+/* Sidebar Navigation Overrides */
+.sidebar-nav-pills .class-pill {
+  color: var(--ink-soft);
+  border: 1px solid rgba(0,0,0,0.15);
+}
+.sidebar-nav-pills .class-pill:not(.active):not(.locked):hover {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.3);
+}
+.sidebar-nav-pills .class-pill.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+
+.mobile-brand { display: none; }
+
+
+
+.mobile-brand { display: none; }
 .menu-btn{
   display:none; background:none; border:1px solid rgba(255,255,255,.3); color:#fff;
   padding:6px 10px; border-radius:8px; cursor:pointer; font-size:.85rem;
@@ -359,14 +380,14 @@ th:first-child, td:first-child{border-top-left-radius:0;}
 #toTop.show{display:flex;}
 
 /* overlay for mobile sidebar */
-.overlay{display:none; position:fixed; inset:0; background:rgba(44,0,30,.5); z-index:45;}
+.overlay{display:none; position:fixed; inset:0; background:rgba(44,0,30,.5); z-index:55;}
 .overlay.show{display:block;}
 
 @media (max-width:900px){
   .layout{grid-template-columns:1fr; padding-top:20px;}
   .sidebar{
     position:fixed; top:0; left:-280px; width:260px; height:100vh; background:var(--paper);
-    z-index:46; padding:70px 20px 20px; box-shadow:8px 0 24px rgba(0,0,0,.15); transition:left .25s;
+    z-index:60; padding:70px 20px 20px; box-shadow:8px 0 24px rgba(0,0,0,.15); transition:left .25s;
     overflow-y:auto;
   }
   .sidebar.show{left:0;}
@@ -1163,4 +1184,94 @@ th:first-child, td:first-child{border-top-left-radius:0;}
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+/* ========================================================
+   COMPREHENSIVE MOBILE RESPONSIVENESS OVERRIDES
+======================================================== */
+@media (max-width: 900px) {
+  /* Layout overrides for grids with inline React styles */
+  .compare-grid, .cheat-grid, .matrix, .matrix-wrap, .layout-compare {
+    grid-template-columns: 1fr !important;
+  }
+  .matrix {
+    font-size: 0.8rem;
+  }
+  
+  /* Header & Navigation */
+  .topbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 15px;
+    height: auto;
+  }
+  .class-pills {
+    justify-content: center;
+    width: 100%;
+    margin: 5px 0 0 0 !important;
+  }
+  
+  /* Fonts */
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  .page-title {
+    font-size: 1.4rem;
+  }
+  .page-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  /* Custom interactive components */
+  .signal-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .sbs-layout, .unit-builder, .pel-body, .lps-body, .tsd-flow {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+  }
+  .tsd-flow > * {
+    width: 100% !important;
+  }
+  
+  /* Flex wrap fixes */
+  .tree-actions, .job-sim-controls, .job-sim-title, .job-spawn-panel, .hero-chips, .sim-mode-toggle {
+    flex-wrap: wrap;
+  }
+  
+  /* Terminal windows */
+  .window {
+    min-width: unset !important;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .terminal-window {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .signal-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .boot-logs {
+    font-size: 0.7rem;
+  }
+  .topbar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .brand {
+    text-align: center;
+  }
+  .desktop-brand {
+    display: none;
+  }
+  .mobile-brand {
+    display: inline;
+  }
 }
