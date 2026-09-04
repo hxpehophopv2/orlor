@@ -1,0 +1,47 @@
+/* Scroll Progress Indicator */
+.scroll-progress {
+  position: fixed;
+  bottom: 16px;
+  left: 48px;
+  color: var(--orange);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+
+.scroll-progress.visible {
+  opacity: 0.3;
+  transform: translateY(0);
+}
+
+/* Default (Small Screens) */
+@media (max-width: 767px) {
+  .scroll-progress {
+    bottom: 20px;
+    left: 20px;
+    font-size: 48px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 768px) {
+  .scroll-progress {
+    font-size: 72px;
+  }
+}
+
+/* Hide `.term-pop` initially so they don't flash */
+.term-pop-injected {
+  display: block; /* GSAP sets inline styles, but we need it block so opacity handles it */
+  opacity: 0;
+  visibility: hidden;
+}
+.term.open .term-pop-injected {
+  visibility: visible;
+}

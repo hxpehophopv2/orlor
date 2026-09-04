@@ -1,0 +1,1154 @@
+{
+  "t_1": {
+    "th": "<i data-lucide=\"menu\" class=\"icon-sm\"></i> เนื้อหา",
+    "en": "<i data-lucide=\"menu\" class=\"icon-sm\"></i> Content"
+  },
+  "t_2": {
+    "th": "<span class=\"dot\"></span> INT134 · System Deployment",
+    "en": "<span class=\"dot\"></span> INT134 · System Deployment"
+  },
+  "t_3": {
+    "th": "คลาส 1",
+    "en": "Class 1"
+  },
+  "t_4": {
+    "th": "คลาส 2",
+    "en": "Class 2"
+  },
+  "t_5": {
+    "th": "คลาส 3",
+    "en": "Class 3"
+  },
+  "t_6": {
+    "th": "คลาส 4",
+    "en": "Class 4"
+  },
+  "t_7": {
+    "th": "คลาส 5",
+    "en": "Class 5"
+  },
+  "t_8": {
+    "th": "สารบัญคลาส 1",
+    "en": "Class 1 Table of Contents"
+  },
+  "t_9": {
+    "th": "เกริ่นก่อนเริ่ม",
+    "en": "Intro"
+  },
+  "t_10": {
+    "th": "โครงสร้างคำสั่ง",
+    "en": "Command Anatomy"
+  },
+  "t_11": {
+    "th": "ประวัติคำสั่ง (History)",
+    "en": "History"
+  },
+  "t_12": {
+    "th": "แก้ไขบรรทัดคำสั่ง",
+    "en": "Editing the Command Line"
+  },
+  "t_13": {
+    "th": "ตั้งค่า .bashrc",
+    "en": ".bashrc Settings"
+  },
+  "t_14": {
+    "th": "sudo / su / whoami",
+    "en": "sudo / su / whoami"
+  },
+  "t_15": {
+    "th": "เจ้าของไฟล์ &amp; สิทธิ์",
+    "en": "File Ownership &amp; Permissions"
+  },
+  "t_16": {
+    "th": "ผู้ใช้ &amp; กลุ่ม",
+    "en": "Users &amp; Groups"
+  },
+  "t_17": {
+    "th": "จัดการแพ็กเกจ (APT)",
+    "en": "Package Management (APT)"
+  },
+  "t_18": {
+    "th": "ผู้จัดการเซอร์วิส (systemd)",
+    "en": "Service Manager (systemd)"
+  },
+  "t_19": {
+    "th": "แบบทดสอบตัวเอง",
+    "en": "Self-Test Quiz"
+  },
+  "t_20": {
+    "th": "Cheat Sheet สรุปท้ายคลาส",
+    "en": "Class Cheat Sheet"
+  },
+  "t_21": {
+    "th": "คลาส <b>1 / 5</b> — Package Management &amp; Service Manager",
+    "en": "Class <b>1 / 5</b> — Package Management &amp; Service Manager"
+  },
+  "t_22": {
+    "th": "เรียน Linux ให้เข้าใจจริง ไม่ใช่แค่พิมพ์ตาม",
+    "en": "Learn Linux to truly understand, not just type"
+  },
+  "t_23": {
+    "th": "หน้านี้สรุปเนื้อหาคลาสแรกของวิชา INT134 ให้อ่านง่าย มีตัวอย่างเทอร์มินัลจริง มีจุดให้ลองทายคำตอบก่อนเฉลย และมีแบบทดสอบท้ายบทให้เช็กความเข้าใจ — เขียนด้วยภาษาแบบเพื่อนอธิบายเพื่อน ไม่มีศัพท์ลอยๆ ที่ไม่อธิบาย",
+    "en": "This page summarizes the first class of INT134 in an easy-to-read format. It includes real terminal examples, quizzes to test yourself, and a cheat sheet — written like a friend explaining it to you."
+  },
+  "t_24": {
+    "th": "<span class=\"n\">1</span> เก่งเทอร์มินัลและ History",
+    "en": "<span class=\"n\">1</span> Master Terminal & History"
+  },
+  "t_25": {
+    "th": "<span class=\"n\">2</span> sudo / su ให้เป็นแอดมินชั่วคราว",
+    "en": "<span class=\"n\">2</span> sudo / su for temporary admin rights"
+  },
+  "t_26": {
+    "th": "<span class=\"n\">3</span> ติดตั้งโปรแกรมด้วย APT",
+    "en": "<span class=\"n\">3</span> Install programs with APT"
+  },
+  "t_27": {
+    "th": "<span class=\"n\">4</span> คุมเซอร์วิสด้วย systemd",
+    "en": "<span class=\"n\">4</span> Manage services with systemd"
+  },
+  "t_28": {
+    "th": "ทำไมต้องเรียนเรื่องนี้",
+    "en": "Why do we need to learn this?"
+  },
+  "t_29": {
+    "th": "วิชานี้ชื่อ <b>System Deployment</b> — ฟังดูเป็นสาย infra แต่จริงๆ แล้วเป็นตัวเชื่อมทุกวิชาที่เรียนมา เวลาเราเขียนเว็บแอปเสร็จ มันต้องมี <span class=\"term\" data-def=\"เครื่องคอมพิวเตอร์เสมือน ที่จำลองเครื่องจริงขึ้นมาบนเซิร์ฟเวอร์ ใช้งานเหมือนมีคอมพิวเตอร์ทั้งเครื่องเป็นของตัวเอง\">เครื่อง (VM)</span> ไว้รันจริง ต้องติดตั้งโปรแกรมที่จำเป็น ต้องดูแลให้เซิร์ฟเวอร์ทำงานต่อเนื่อง — ทั้งหมดนี้คือสิ่งที่คลาสนี้จะสอน",
+    "en": "This course is called <b>System Deployment</b> — it connects everything you've learned. When you finish writing a web app, you need a <span class=\"term\" data-def=\"A virtual machine that simulates a real computer on a server, acting like your own personal machine.\">VM</span> to run it. You need to install packages and ensure the server runs continuously. That's what this class teaches."
+  },
+  "t_30": {
+    "th": "<span class=\"tag\">สิ่งที่ต้องรู้ก่อนเริ่ม</span>\n        เครื่องที่ใช้เรียนคือ Ubuntu 24.04 LTS เชื่อมต่อผ่าน <span class=\"term\" data-def=\"โปรโตคอลสำหรับเชื่อมต่อและควบคุมเครื่องอื่นจากระยะไกลผ่านบรรทัดคำสั่ง อย่างปลอดภัย\">SSH</span> ด้วยคำสั่งประมาณ <code>ssh sysadmin@lvm68001.sit.kmutt.ac.th</code> — ทุกคนได้เครื่องของตัวเอง 1 คน 1 เครื่อง และมีสิทธิ์เป็นแอดมินเต็มรูปแบบ ซึ่งหมายความว่า <b>ทำพังก็พังคนเดียว แต่ก็ต้องรับผิดชอบเองด้วย</b> — ห้ามแชร์รหัสผ่าน ห้ามตั้งรหัสผ่านที่คาดเดาง่าย",
+    "en": "<span class=\"tag\">What you need to know before starting</span>\n        The machine used for this class is Ubuntu 24.04 LTS connected via <span class=\"term\" data-def=\"A secure protocol for connecting to and controlling another machine remotely via the command line.\">SSH</span> with a command like <code>ssh sysadmin@lvm68001.sit.kmutt.ac.th</code> — Everyone gets their own machine and full admin rights. This means <b>if you break it, you break it alone, but you're responsible for it</b>. Do not share your password."
+  },
+  "t_31": {
+    "th": "สิ่งที่ต้องรู้ก่อนเริ่ม",
+    "en": "What you need to know before starting"
+  },
+  "t_32": {
+    "th": "วันนี้เราจะโฟกัสที่ 4 เรื่องหลัก: การใช้เทอร์มินัลให้คล่องขึ้น, การขอสิทธิ์แอดมินอย่างปลอดภัยด้วย <code>sudo</code>, การติดตั้งโปรแกรมด้วยตัวจัดการแพ็กเกจ (<code>apt</code>) และการควบคุมโปรแกรมที่ทำงานเบื้องหลังด้วย <code>systemd</code>",
+    "en": "Today we will focus on 4 main topics: getting comfortable with the terminal, safely requesting admin rights with <code>sudo</code>, installing programs with <code>apt</code>, and managing background services with <code>systemd</code>"
+  },
+  "t_33": {
+    "th": "โครงสร้างของคำสั่งหนึ่งบรรทัด",
+    "en": "Command Line Anatomy"
+  },
+  "t_34": {
+    "th": "ทุกคำสั่งใน Linux ประกอบด้วย 3 ส่วนเสมอ ลองแตะที่แต่ละส่วนของคำสั่งด้านล่างดูว่ามันทำหน้าที่อะไร:",
+    "en": "Every Linux command consists of 3 parts. Tap on each part of the command below to see what it does:"
+  },
+  "t_35": {
+    "th": "<i data-lucide=\"mouse-pointer-click\" class=\"icon-sm\"></i> แตะที่คำในบรรทัดข้างบนเพื่อดูว่ามันคืออะไร",
+    "en": "<i data-lucide=\"mouse-pointer-click\" class=\"icon-sm\"></i> Tap the words in the line above to see what they mean"
+  },
+  "t_36": {
+    "th": "<i style=\"background:#FCEAE6\"></i> ชื่อคำสั่ง",
+    "en": "<i style=\"background:#FCEAE6\"></i> Command"
+  },
+  "t_37": {
+    "th": "<i style=\"background:#F2C879\"></i> ตัวเลือก",
+    "en": "<i style=\"background:#F2C879\"></i> Option"
+  },
+  "t_38": {
+    "th": "<i style=\"background:#8FD3F4\"></i> อาร์กิวเมนต์",
+    "en": "<i style=\"background:#8FD3F4\"></i> Argument"
+  },
+  "t_39": {
+    "th": "ตัวเลือกสั้น vs ตัวเลือกยาว",
+    "en": "Short Option vs Long Option"
+  },
+  "t_40": {
+    "th": "-x แบบสั้น",
+    "en": "-x Short format"
+  },
+  "t_41": {
+    "th": "ใช้ขีดเดียว เขียนติดกันได้หลายตัว เช่น <code>-la</code> = <code>-l -a</code> พิมพ์เร็ว แต่ถ้าเยอะๆ จะอ่านยากและพิมพ์ผิดง่าย",
+    "en": "Uses a single dash, multiple can be combined e.g. <code>-la</code> = <code>-l -a</code>. Fast to type, but can be hard to read."
+  },
+  "t_42": {
+    "th": "--xxxx แบบยาว",
+    "en": "--xxxx Long format"
+  },
+  "t_43": {
+    "th": "ใช้สองขีด อ่านรู้เรื่องทันทีว่าจะทำอะไร ระบุได้ทีละตัว เหมาะกับการเขียนสคริปต์ที่ต้องอ่านซ้ำในอนาคต",
+    "en": "Uses two dashes, easy to understand instantly. Better for writing scripts that need to be read later."
+  },
+  "t_44": {
+    "th": "<i data-lucide=\"arrow-right-to-line\" class=\"icon-sm\"></i><i data-lucide=\"arrow-right-to-line\" class=\"icon-sm\"></i> Tab เช็คให้",
+    "en": "<i data-lucide=\"arrow-right-to-line\" class=\"icon-sm\"></i><i data-lucide=\"arrow-right-to-line\" class=\"icon-sm\"></i> Tab Autocomplete"
+  },
+  "t_45": {
+    "th": "จำตัวเลือกไม่ได้ไม่เป็นไร กด Tab สองครั้งให้ระบบช่วยแสดงตัวเลือกที่มีให้เลือก ไม่ต้องท่องจำ",
+    "en": "Can't remember the exact option? Just press Tab twice to let the system show you the available options."
+  },
+  "t_46": {
+    "th": "<span class=\"tag\">ทำไมต้องรู้เรื่องนี้ตอนสอบ</span>\n        เวลาสอบจะไม่มีเน็ต ไม่มี AI ให้ช่วย แต่ <b>autocomplete (Tab) และ <code>--help</code> ยังใช้ได้เสมอ</b> ฉะนั้นไม่ต้องท่องจำคำสั่งทุกตัวเป๊ะๆ ขอแค่จำ \"แนวทาง\" ได้ แล้วให้ Tab กับ help ช่วยเติมส่วนที่เหลือ",
+    "en": "<span class=\"tag\">Why you should know this for the exam</span>\n        During exams, you won't have internet or AI, but <b>autocomplete (Tab) and <code>--help</code> are always available</b>. You don't need to memorize everything, just understand the concepts and use Tab/help."
+  },
+  "t_47": {
+    "th": "ทำไมต้องรู้เรื่องนี้ตอนสอบ",
+    "en": "Why you should know this for the exam"
+  },
+  "t_48": {
+    "th": "ประวัติคำสั่ง — ไม่ต้องพิมพ์คำสั่งเดิมซ้ำอีก",
+    "en": "Command History — No need to retype the same command"
+  },
+  "t_49": {
+    "th": "ระบบจะจำคำสั่งทุกอันที่เราพิมพ์ไว้ เรียกดูย้อนหลังได้ และเรียกกลับมาใช้ซ้ำได้โดยไม่ต้องพิมพ์ใหม่",
+    "en": "The system remembers every command you've typed, allowing you to reuse them without retyping."
+  },
+  "t_50": {
+    "th": "คำสั่ง / ปุ่มลัด",
+    "en": "Command / Shortcut"
+  },
+  "t_51": {
+    "th": "ทำอะไร",
+    "en": "What it does"
+  },
+  "t_52": {
+    "th": "<code>history</code>",
+    "en": "<code>history</code>"
+  },
+  "t_53": {
+    "th": "แสดงประวัติคำสั่งทั้งหมด",
+    "en": "Show all command history"
+  },
+  "t_54": {
+    "th": "<code>history N</code>",
+    "en": "<code>history N</code>"
+  },
+  "t_55": {
+    "th": "แสดงย้อนหลังแค่ N คำสั่งล่าสุด",
+    "en": "Show only the last N commands"
+  },
+  "t_56": {
+    "th": "<code>!!</code>",
+    "en": "<code>!!</code>"
+  },
+  "t_57": {
+    "th": "แทนที่ด้วย \"คำสั่งล่าสุด\" ทั้งบรรทัด",
+    "en": "Execute the most recent command again"
+  },
+  "t_58": {
+    "th": "<code>!N</code>",
+    "en": "<code>!N</code>"
+  },
+  "t_59": {
+    "th": "เรียกคำสั่งหมายเลข N ในประวัติกลับมา",
+    "en": "Execute command number N from history"
+  },
+  "t_60": {
+    "th": "<code>!-N</code>",
+    "en": "<code>!-N</code>"
+  },
+  "t_61": {
+    "th": "เรียกคำสั่งที่พิมพ์ไป N ครั้งก่อนหน้านี้",
+    "en": "Execute the command typed N times ago"
+  },
+  "t_62": {
+    "th": "<code>!echo</code>",
+    "en": "<code>!echo</code>"
+  },
+  "t_63": {
+    "th": "เรียกคำสั่งล่าสุดที่ขึ้นต้นด้วยคำว่า echo",
+    "en": "Execute the most recent command starting with echo"
+  },
+  "t_64": {
+    "th": "<code>!$</code>",
+    "en": "<code>!$</code>"
+  },
+  "t_65": {
+    "th": "ดึงเฉพาะ \"อาร์กิวเมนต์ตัวสุดท้าย\" ของคำสั่งก่อนหน้า",
+    "en": "Extract just the \"last argument\" of the previous command"
+  },
+  "t_66": {
+    "th": "<code>!*</code>",
+    "en": "<code>!*</code>"
+  },
+  "t_67": {
+    "th": "ดึง \"อาร์กิวเมนต์ทั้งหมด\" ของคำสั่งก่อนหน้า",
+    "en": "Extract \"all arguments\" of the previous command"
+  },
+  "t_68": {
+    "th": "<b>ลองทายก่อน:</b> จากประวัติด้านบน ถ้าเราพิมพ์ <code>!8</code> แล้วกด Enter จะเกิดอะไรขึ้น?",
+    "en": "<b>Try to guess:</b> From the history above, if we type <code>!8</code> and press Enter, what happens?"
+  },
+  "t_69": {
+    "th": "ดูคำตอบ",
+    "en": "Reveal answer"
+  },
+  "t_70": {
+    "th": "ระบบจะรันคำสั่งหมายเลข 8 ในประวัติซ้ำ ซึ่งคือ <code>logout</code> — เท่ากับเราออกจากระบบทันที! นี่คือเหตุผลที่ต้องระวังเวลาใช้ <code>!N</code> เพราะถ้าจำเลขผิดอาจสั่งงานผิดคำสั่งได้",
+    "en": "The system will rerun command number 8, which is <code>logout</code> — meaning you instantly log out! This is why you must be careful with <code>!N</code>."
+  },
+  "t_71": {
+    "th": "เลื่อนดูประวัติแบบไหนดีกว่ากัน",
+    "en": "Which way to scroll history is better?"
+  },
+  "t_72": {
+    "th": "<i data-lucide=\"arrow-up\" class=\"icon-sm\"></i> <i data-lucide=\"arrow-down\" class=\"icon-sm\"></i> ลูกศรขึ้นลง",
+    "en": "<i data-lucide=\"arrow-up\" class=\"icon-sm\"></i> <i data-lucide=\"arrow-down\" class=\"icon-sm\"></i> Up/Down Arrows"
+  },
+  "t_73": {
+    "th": "เลื่อนดูทีละคำสั่ง ใช้งานง่าย แต่ถ้าคำสั่งที่ต้องการอยู่ไกลย้อนหลังไปมาก ต้องกดหลายครั้งกว่าจะถึง",
+    "en": "Scroll through one by one. Easy to use, but tedious if the command is far back."
+  },
+  "t_74": {
+    "th": "Ctrl+R ค้นแบบย้อนหลัง",
+    "en": "Ctrl+R Reverse Search"
+  },
+  "t_75": {
+    "th": "พิมพ์บางส่วนของคำสั่ง ระบบเดาให้จากคำสั่งล่าสุดที่ตรงกัน กด Ctrl+R ซ้ำเพื่อย้อนหาอันที่เก่ากว่า",
+    "en": "Type part of the command and the system guesses the most recent match. Press Ctrl+R again to find older matches."
+  },
+  "t_76": {
+    "th": "Ctrl+S ค้นแบบไปข้างหน้า",
+    "en": "Ctrl+S Forward Search"
+  },
+  "t_77": {
+    "th": "ใช้คู่กับ Ctrl+R เผื่อกดย้อนเลยคำสั่งที่ต้องการไป จะได้เลื่อนกลับมาข้างหน้าได้ <b>(ต้องตั้งค่าก่อนถึงจะใช้ได้ — ดูหัวข้อถัดไป)</b>",
+    "en": "Use with Ctrl+R if you went too far back. <b>(Requires configuration first — see next section)</b>"
+  },
+  "t_78": {
+    "th": "แก้ไขบรรทัดคำสั่งโดยไม่ต้องลบทิ้งทั้งหมด",
+    "en": "Editing the Command Line without deleting everything"
+  },
+  "t_79": {
+    "th": "เวลาพิมพ์คำสั่งยาวๆ แล้วพิมพ์ผิดตรงกลาง ไม่จำเป็นต้องลบทั้งบรรทัดแล้วพิมพ์ใหม่ ใช้ปุ่มลัดพวกนี้ช่วยได้",
+    "en": "When typing a long command and you make a mistake, you don't need to delete the whole line. Use these shortcuts."
+  },
+  "t_80": {
+    "th": "ปุ่มลัด",
+    "en": "Shortcut"
+  },
+  "t_81": {
+    "th": "<code>Ctrl+A</code> / <code>Ctrl+E</code>",
+    "en": "<code>Ctrl+A</code> / <code>Ctrl+E</code>"
+  },
+  "t_82": {
+    "th": "กระโดดไปต้นบรรทัด / ท้ายบรรทัด",
+    "en": "Jump to start / end of line"
+  },
+  "t_83": {
+    "th": "<code>Alt+F</code> / <code>Alt+B</code>",
+    "en": "<code>Alt+F</code> / <code>Alt+B</code>"
+  },
+  "t_84": {
+    "th": "กระโดดไปข้างหน้า / ถอยหลังทีละคำ",
+    "en": "Jump forward / backward one word"
+  },
+  "t_85": {
+    "th": "<code>Ctrl+W</code>",
+    "en": "<code>Ctrl+W</code>"
+  },
+  "t_86": {
+    "th": "ลบคำทางซ้ายของเคอร์เซอร์",
+    "en": "Delete the word to the left of the cursor"
+  },
+  "t_87": {
+    "th": "<code>Ctrl+U</code> / <code>Ctrl+K</code>",
+    "en": "<code>Ctrl+U</code> / <code>Ctrl+K</code>"
+  },
+  "t_88": {
+    "th": "ลบทุกอย่างทางซ้าย / ทางขวาของเคอร์เซอร์",
+    "en": "Delete everything to the left / right of the cursor"
+  },
+  "t_89": {
+    "th": "<code>Ctrl+Y</code>",
+    "en": "<code>Ctrl+Y</code>"
+  },
+  "t_90": {
+    "th": "วางข้อความที่เพิ่งลบไปด้วย U / K / W กลับมา",
+    "en": "Paste text just deleted by U / K / W"
+  },
+  "t_91": {
+    "th": "<code>Ctrl+_</code>",
+    "en": "<code>Ctrl+_</code>"
+  },
+  "t_92": {
+    "th": "Undo — ย้อนกลับการแก้ไขล่าสุด (ปุ่มลับที่มีประโยชน์มาก มือใหม่มักไม่รู้)",
+    "en": "Undo — reverts the last edit (a very useful hidden shortcut)"
+  },
+  "t_93": {
+    "th": "<code>Ctrl+L</code>",
+    "en": "<code>Ctrl+L</code>"
+  },
+  "t_94": {
+    "th": "ล้างหน้าจอ (เหมือนคำสั่ง <code>clear</code>)",
+    "en": "Clear screen (like the <code>clear</code> command)"
+  },
+  "t_95": {
+    "th": "<span class=\"tag\">จำง่ายๆ</span>\n        คิดว่า <b>Ctrl+_</b> คือปุ่ม \"อุ๊ยพลาด\" — พิมพ์ผิด ลบเยอะไปหน่อย กด Ctrl+_ (ต้องกด Shift ค้างด้วยเพราะ _ อยู่บน -) เพื่อย้อนกลับ โดยไม่ต้องใช้ลูกศรขึ้นลงเรียกประวัติมาใหม่",
+    "en": "<span class=\"tag\">Easy to remember</span>\n        Think of <b>Ctrl+_</b> as the \"oops\" button — if you made a mistake or deleted too much, use this to undo."
+  },
+  "t_96": {
+    "th": "จำง่ายๆ",
+    "en": "Easy to remember"
+  },
+  "t_97": {
+    "th": "ตั้งค่าเทอร์มินัลให้ใช้งานสะดวกขึ้นด้วย .bashrc",
+    "en": "Configure terminal via .bashrc"
+  },
+  "t_98": {
+    "th": "<code>~/.bashrc</code> คือไฟล์ตั้งค่าที่ <span class=\"term\" data-def=\"Shell แบบที่เรามีการโต้ตอบกับมันตรงๆ ผ่านการพิมพ์คำสั่งแล้วเห็นผลทันที ตรงข้ามกับสคริปต์ที่รันแบบอัตโนมัติไม่มีคนคอยพิมพ์\">shell แบบโต้ตอบ (interactive shell)</span> จะเปิดอ่านทุกครั้งที่เรา login เข้าเครื่อง เราแก้ไฟล์นี้เพื่อสั่งให้เทอร์มินัลทำอะไรบางอย่างทุกครั้งที่เปิดใช้งาน",
+    "en": "<code>~/.bashrc</code> is a configuration file that the <span class=\"term\" data-def=\"A shell where you interact directly via typed commands, unlike automated scripts.\">interactive shell</span> reads every time we log in."
+  },
+  "t_99": {
+    "th": "สิ่งที่เราจะตั้งค่าวันนี้",
+    "en": "What we will configure today"
+  },
+  "t_100": {
+    "th": "ตั้งค่า",
+    "en": "Setting"
+  },
+  "t_101": {
+    "th": "<code>stty -ixon</code>",
+    "en": "<code>stty -ixon</code>"
+  },
+  "t_102": {
+    "th": "ปลดล็อกปุ่ม <code>Ctrl+S</code> ที่ปกติเทอร์มินัลเอาไปใช้ \"หยุดหน้าจอชั่วคราว\" ให้เรานำมาใช้ค้นหาแบบไปข้างหน้าแทน",
+    "en": "Unlocks <code>Ctrl+S</code> so we can use it for forward search instead of freezing the terminal."
+  },
+  "t_103": {
+    "th": "<code>HISTSIZE</code>",
+    "en": "<code>HISTSIZE</code>"
+  },
+  "t_104": {
+    "th": "จำนวนคำสั่งที่เก็บไว้ใน <b>หน่วยความจำ</b> ของเซสชันปัจจุบัน (RAM)",
+    "en": "Number of commands kept in <b>memory</b> for the current session (RAM)"
+  },
+  "t_105": {
+    "th": "<code>HISTFILESIZE</code>",
+    "en": "<code>HISTFILESIZE</code>"
+  },
+  "t_106": {
+    "th": "จำนวนบรรทัดที่เก็บไว้ใน <b>ไฟล์บนดิสก์</b> <code>~/.bash_history</code> ข้ามเซสชันได้",
+    "en": "Number of lines kept in the <b>disk file</b> <code>~/.bash_history</code>"
+  },
+  "t_107": {
+    "th": "<span class=\"tag\">จุดที่คนสับสนบ่อย</span>\n        <code>HISTSIZE</code> กับ <code>HISTFILESIZE</code> ฟังดูคล้ายกันมาก แต่คนละที่เก็บ: <b>HISTSIZE = ความจำระหว่างที่เทอร์มินัลยังเปิดอยู่</b> ส่วน <b>HISTFILESIZE = ไฟล์ที่บันทึกไว้ถาวร</b> ค่าเริ่มต้นมักตั้งไว้แค่ 1,000 บรรทัด ซึ่งตอนสอบถ้าย้อนดูคำสั่งเก่าไม่พอ จะลำบากได้",
+    "en": "<span class=\"tag\">Common confusion point</span>\n        <code>HISTSIZE</code> and <code>HISTFILESIZE</code> sound similar: <b>HISTSIZE = memory</b> while <b>HISTFILESIZE = saved file</b>. The default is often just 1,000 lines."
+  },
+  "t_108": {
+    "th": "จุดที่คนสับสนบ่อย",
+    "en": "Common confusion point"
+  },
+  "t_109": {
+    "th": "แก้ไฟล์เสร็จแล้ว...ทำไมยังไม่ทำงาน?",
+    "en": "I edited the file... why isn't it working?"
+  },
+  "t_110": {
+    "th": "เพราะ shell อ่านไฟล์นี้ <b>แค่ตอนเริ่มทำงานครั้งเดียว</b> ต่อให้เราแก้ไฟล์เสร็จ shell ที่เปิดอยู่ก็ยังใช้ค่าเดิมในหน่วยความจำอยู่ ต้องเลือกทำอย่างใดอย่างหนึ่ง:",
+    "en": "Because the shell only reads this file <b>once upon starting</b>. You have two options:"
+  },
+  "t_111": {
+    "th": "<b>ลองคิดตาม:</b> มีวิธีทำให้การตั้งค่าใหม่มีผลทันที 2 วิธี คืออะไรบ้าง?",
+    "en": "<b>Think about it:</b> What are 2 ways to apply the new settings immediately?"
+  },
+  "t_112": {
+    "th": "<b>วิธีที่ 1 (ง่ายสุด):</b> ออกจากเทอร์มินัลแล้ว login เข้าใหม่ เท่ากับสร้างเซสชันใหม่ที่อ่านไฟล์ล่าสุด<br><br>\n          <b>วิธีที่ 2 (ไม่ต้องออก):</b> ใช้คำสั่ง <code>source ~/.bashrc</code> — สั่งให้ shell ปัจจุบันไปอ่านสคริปต์นั้นมารันซ้ำ โดยไม่ต้องเปิดเซสชันใหม่",
+    "en": "<b>Method 1 (Easiest):</b> Log out and log back in.<br><br>\n          <b>Method 2 (No logout):</b> Run <code>source ~/.bashrc</code> — forces the current shell to re-read the file."
+  },
+  "t_113": {
+    "th": "sudo &amp; su — ขอสิทธิ์แอดมินแบบชั่วคราว",
+    "en": "sudo &amp; su — Temporary Admin Rights"
+  },
+  "t_114": {
+    "th": "ทุกระบบ Linux มีผู้ใช้พิเศษชื่อ <code>root</code> (uid = 0) ที่ทำอะไรก็ได้ในเครื่อง คำถามคือ: เราควร login เป็น root ตลอดเวลาไหม?",
+    "en": "Every Linux system has a special user called <code>root</code> (uid = 0) who can do anything. Should we log in as root all the time?"
+  },
+  "t_115": {
+    "th": "<span class=\"tag\">ทำไมไม่ล็อกอินเป็น root ตลอดเวลา</span>\n        ถ้าพลาดพิมพ์คำสั่งผิด (เช่น <code>rm -rf</code> ผิดโฟลเดอร์) ตอนเป็น root จะไม่มีอะไรกันเราไว้เลย ผลกระทบจะรุนแรงกว่าการเป็นผู้ใช้ทั่วไปมาก และถ้าต้องมีแอดมินหลายคน การให้ทุกคนใช้บัญชี root ร่วมกันแปลว่าต้อง <b>แชร์รหัสผ่านเดียวกัน</b> — พอมีปัญหาจะสืบไม่ได้ว่าใครทำ",
+    "en": "<span class=\"tag\">Why not log in as root?</span>\n        If you type a command wrong (like <code>rm -rf</code>), root has no safeguards. Also, if admins share the root account, they share the <b>same password</b> — making it impossible to audit who did what."
+  },
+  "t_116": {
+    "th": "ทำไมไม่ล็อกอินเป็น root ตลอดเวลา",
+    "en": "Why not log in as root?"
+  },
+  "t_117": {
+    "th": "ทางออกคือคำสั่ง <span class=\"term\" data-def=\"ย่อมาจาก super user do แปลว่า 'ทำในฐานะซูเปอร์ยูสเซอร์' คือขอยกระดับสิทธิ์ชั่วคราวแค่คำสั่งเดียว\">sudo</span> — ยืมสิทธิ์ root มาใช้แค่ \"ชั่วคราว เฉพาะคำสั่งเดียว\" แล้วก็กลับมาเป็นตัวเองเหมือนเดิม เปรียบเหมือนการยืมกุญแจสำรองมาเปิดห้องเดียว ไม่ใช่การเปลี่ยนตัวเองให้เป็นภารโรงถาวร",
+    "en": "The solution is <span class=\"term\" data-def=\"Stands for super user do, meaning 'execute as superuser' for a single command.\">sudo</span> — borrowing root privileges temporarily for a single command."
+  },
+  "t_118": {
+    "th": "<span class=\"tag\">ทำไมต้องใส่รหัสผ่านของตัวเอง ไม่ใช่ของ root</span>\n        นี่คือจุดสำคัญมาก: <code>sudo</code> ถามรหัสผ่าน <b>\"ของคนที่พิมพ์คำสั่ง\" เอง</b> ไม่ใช่รหัสของ root — เพราะงั้นไม่มีใครต้องรู้รหัส root เลย ระบบแค่เช็กว่า \"คนนี้อยู่ในกลุ่ม <code>sudo</code> ที่มีสิทธิ์ยืมอำนาจ root ได้หรือเปล่า\" ถ้าใช่ก็ปล่อยผ่าน ถ้าเปลี่ยนรหัสผ่านของแอดมินคนหนึ่ง คนอื่นก็ไม่กระทบเลย",
+    "en": "<span class=\"tag\">Why enter your own password instead of root's?</span>\n        This is crucial: <code>sudo</code> asks for <b>your password</b>, not root's. This means nobody needs to know the root password."
+  },
+  "t_119": {
+    "th": "ทำไมต้องใส่รหัสผ่านของตัวเอง ไม่ใช่ของ root",
+    "en": "Why enter your own password instead of root's?"
+  },
+  "t_120": {
+    "th": "ฉันคือใคร — id / whoami / who am i ต่างกันตรงไหน",
+    "en": "Who am I? — id / whoami / who am i"
+  },
+  "t_121": {
+    "th": "ทั้ง 3 คำสั่งฟังดูตอบคำถามเดียวกัน แต่จริงๆ แล้วแต่ละตัวไปดูข้อมูลคนละแหล่ง ลองดูว่าเวลาใส่ <code>sudo</code> นำหน้า คำตอบของแต่ละตัวจะเปลี่ยนไหม:",
+    "en": "These 3 commands sound identical, but they look at different data:"
+  },
+  "t_122": {
+    "th": "id",
+    "en": "id"
+  },
+  "t_123": {
+    "th": "บอก <b>uid / gid / groups</b> ของ \"สิทธิ์ที่กำลังใช้อยู่ตอนนี้\" ถ้าใส่ <code>sudo</code> นำหน้า จะได้ uid=0 (root) ทันที เพราะกำลังทำงานด้วยสิทธิ์ root จริงๆ",
+    "en": "Shows <b>uid / gid / groups</b> for the \"current privileges\". With <code>sudo</code>, it shows uid=0 (root)."
+  },
+  "t_124": {
+    "th": "whoami",
+    "en": "whoami"
+  },
+  "t_125": {
+    "th": "บอก \"ผู้ใช้ที่มีผลบังคับ (effective user)\" ของโพรเซสนี้ ใส่ <code>sudo</code> นำหน้าก็จะตอบว่า <code>root</code> เหมือนกับ id เพราะดูสิทธิ์ปัจจุบันเช่นกัน",
+    "en": "Shows the \"effective user\". With <code>sudo</code>, it also reports <code>root</code>."
+  },
+  "t_126": {
+    "th": "who am i",
+    "en": "who am i"
+  },
+  "t_127": {
+    "th": "บอก \"ใคร login เข้า terminal นี้จริงๆ\" — ต่อให้ใส่ <code>sudo</code> นำหน้า ก็ยังตอบเป็น<b>ชื่อบัญชีที่เรา login เข้ามา</b> เพราะมันไม่สนใจสิทธิ์ที่ยืมมาชั่วคราว มันสนใจแค่ \"ใครเดินเข้าประตูมา\"",
+    "en": "Shows \"who actually logged into this terminal\". Even with <code>sudo</code>, it still reports <b>your original account name</b>."
+  },
+  "t_128": {
+    "th": "<b>ลองทายก่อน:</b> ถ้า login ด้วยบัญชี <code>sysadmin</code> แล้วพิมพ์ <code>sudo who am i</code> จะได้คำตอบว่าอะไร — \"root\" หรือ \"sysadmin\"?",
+    "en": "<b>Try to guess:</b> If logged in as <code>sysadmin</code> and you type <code>sudo who am i</code>, what is the output?"
+  },
+  "t_129": {
+    "th": "คำตอบคือ <b>sysadmin</b> (พร้อม pts และเวลา login) ไม่ใช่ root! นี่คือจุดที่นักเรียนหลายคนตอบผิดตอนเรียนจริง เพราะเข้าใจว่า sudo แปลว่า \"กลายเป็น root ทุกมิติ\" แต่จริงๆ <code>who am i</code> จงใจไม่สนใจสิทธิ์ที่ขอยืมมา มันรายงานแค่ตัวตนที่ login เข้าระบบเท่านั้น — ต่างจาก <code>id</code> และ <code>whoami</code> ที่รายงานสิทธิ์ปัจจุบันที่ใช้งานอยู่",
+    "en": "The answer is <b>sysadmin</b>! It only reports the original login identity."
+  },
+  "t_130": {
+    "th": "su — สลับตัวตนแบบเต็มรูปแบบ",
+    "en": "su — Full Identity Switch"
+  },
+  "t_131": {
+    "th": "ถ้า <code>sudo</code> คือยืมกุญแจมาเปิดแค่ประตูเดียว <code>su username</code> คือ \"สวมบทบาทเป็นคนนั้นทั้งตัว\" ต้องรู้รหัสผ่านของบัญชีที่จะสลับไป และอยู่ในสถานะนั้นจนกว่าจะพิมพ์ <code>exit</code> ออกมา",
+    "en": "While <code>sudo</code> is borrowing keys, <code>su username</code> is completely switching to that user. You need their password and stay as them until you type <code>exit</code>."
+  },
+  "t_132": {
+    "th": "sudo -u user command",
+    "en": "sudo -u user command"
+  },
+  "t_133": {
+    "th": "รันคำสั่งเดียวในฐานะ user คนนั้น ใช้รหัสผ่านของ<b>ตัวเอง</b> (ต้องอยู่กลุ่ม sudo) จบคำสั่งก็กลับมาเป็นตัวเองทันที",
+    "en": "Run a single command as that user using <b>your</b> password."
+  },
+  "t_134": {
+    "th": "su user",
+    "en": "su user"
+  },
+  "t_135": {
+    "th": "สลับทั้ง shell ไปเป็น user คนนั้น ใช้รหัสผ่าน<b>ของคนที่จะสลับไป</b> ต้อง <code>exit</code> เองถึงจะกลับมา",
+    "en": "Switch the entire shell to that user, using <b>their</b> password."
+  },
+  "t_136": {
+    "th": "<span class=\"tag\">เรื่องเล่าเตือนใจ</span>\n        อาจารย์เล่าว่ามีรุ่นพี่เคยให้รหัสผ่านบัญชีมหาวิทยาลัยเพื่อนไปลงทะเบียนแทน สุดท้ายเกิดปัญหาขึ้นมาก็สืบไม่ได้ว่าใครทำ — บทเรียนคือ <b>ไม่แชร์รหัสผ่านกับใครเด็ดขาด</b> ต่อให้ไว้ใจกันแค่ไหนก็ตาม เพราะระบบยืนยันตัวตนจะรู้จักแค่ \"รหัสผ่าน\" ไม่รู้จัก \"ใครเป็นคนพิมพ์\"",
+    "en": "<span class=\"tag\">Cautionary Tale</span>\n        A senior once gave their university password to a friend to register for them. When a problem occurred, it was untraceable. <b>Never share passwords</b>."
+  },
+  "t_137": {
+    "th": "เรื่องเล่าเตือนใจ",
+    "en": "Cautionary Tale"
+  },
+  "t_138": {
+    "th": "เจ้าของไฟล์ &amp; สิทธิ์การเข้าถึง",
+    "en": "File Ownership &amp; Permissions"
+  },
+  "t_139": {
+    "th": "เวลาสร้างไฟล์หรือโฟลเดอร์ใหม่ ระบบจะบันทึกไว้เสมอว่า \"ใครเป็นเจ้าของ (user)\" และ \"อยู่กลุ่มไหน (group)\" ลองดูผลจาก <code>ls -l</code>:",
+    "en": "When a file is created, the system records \"who owns it (user)\" and \"which group it belongs to (group)\":"
+  },
+  "t_140": {
+    "th": "<span class=\"tag\">กับดักยอดฮิต</span>\n        ถ้าสร้างไฟล์ด้วย <code>sudo mkdir</code> หรือ <code>sudo touch</code> เจ้าของไฟล์จะกลายเป็น <b>root</b> ทันที (เพราะตอนนั้นเรากำลังทำงานด้วยสิทธิ์ root) พอกลับมาเป็นตัวเองแล้วจะเขียนไฟล์นั้นต่อไม่ได้ ขึ้น <code>Permission denied</code> — เป็นปัญหาที่เจอบ่อยที่สุดตอนเริ่มใช้ sudo แบบไม่ระวัง",
+    "en": "<span class=\"tag\">Common Trap</span>\n        If you create a file with <code>sudo mkdir</code> or <code>sudo touch</code>, the owner becomes <b>root</b>. You won't be able to edit it as a normal user."
+  },
+  "t_141": {
+    "th": "กับดักยอดฮิต",
+    "en": "Common Trap"
+  },
+  "t_142": {
+    "th": "วิธีแก้คือใช้ <code>chown</code> (change owner) เพื่อ \"ยกกรรมสิทธิ์\" ไฟล์ให้กลับมาเป็นของเรา:",
+    "en": "The solution is to use <code>chown</code> (change owner) to give the ownership back to yourself:"
+  },
+  "t_143": {
+    "th": "chown user path",
+    "en": "chown user path"
+  },
+  "t_144": {
+    "th": "เปลี่ยนแค่ \"เจ้าของ (user owner)\" อย่างเดียว ไม่แตะกลุ่ม",
+    "en": "Changes only the \"user owner\"."
+  },
+  "t_145": {
+    "th": "chown :group path",
+    "en": "chown :group path"
+  },
+  "t_146": {
+    "th": "เปลี่ยนแค่ \"กลุ่มเจ้าของ (group owner)\" อย่างเดียว ไม่แตะ user",
+    "en": "Changes only the \"group owner\"."
+  },
+  "t_147": {
+    "th": "chown user:group path",
+    "en": "chown user:group path"
+  },
+  "t_148": {
+    "th": "เปลี่ยนทั้งคู่พร้อมกัน — ถ้าใส่ <code>user:</code> แล้วไม่ระบุชื่อกลุ่ม ระบบจะเดาใช้ primary group ของ user นั้นให้อัตโนมัติ",
+    "en": "Changes both. If you type <code>user:</code>, it defaults to their primary group."
+  },
+  "t_149": {
+    "th": "<span class=\"tag\">รู้ไว้ก็ดี</span>\n        การ chown ให้คนอื่นเป็นเจ้าของ ทำได้เฉพาะ <b>root เท่านั้น</b> — ต่อให้เราเป็นเจ้าของไฟล์เอง ก็ยังโอนกรรมสิทธิ์ให้คนอื่นเองไม่ได้ (เปลี่ยนให้ตัวเองซ้ำได้ เพราะเท่ากับไม่เปลี่ยนอะไรเลย) เหตุผลคือถ้าใครโอนไฟล์ให้ใครก็ได้ตามใจ ระบบสิทธิ์จะควบคุมอะไรไม่ได้เลย",
+    "en": "<span class=\"tag\">Good to know</span>\n        Only <b>root</b> can chown a file to another user. You cannot give your own files away."
+  },
+  "t_150": {
+    "th": "รู้ไว้ก็ดี",
+    "en": "Good to know"
+  },
+  "t_151": {
+    "th": "สร้างผู้ใช้และจัดกลุ่ม",
+    "en": "Creating Users & Groups"
+  },
+  "t_152": {
+    "th": "<span class=\"tag\">สังเกตไหมว่า group ชื่อซ้ำกับ user</span>\n        ถ้าสร้าง user แบบไม่ระบุกลุ่ม ระบบจะสร้าง <b>กลุ่มใหม่ที่ชื่อเดียวกับ user นั้นให้อัตโนมัติ</b> แล้วให้ user เป็นสมาชิกเดี่ยวๆ ของกลุ่มนั้น เรียกว่า <span class=\"term\" data-def=\"กลุ่มหลักของผู้ใช้คนหนึ่ง ทุกคนต้องมีกลุ่มหลักเสมอ 1 กลุ่ม ใช้กำหนดความเป็นเจ้าของตอนสร้างไฟล์ใหม่\">primary group</span> — นี่คือเหตุผลที่พิมพ์ <code>id</code> แล้วเห็นชื่อซ้ำกัน 2 รอบ ไม่ใช่ความผิดพลาดของระบบ",
+    "en": "<span class=\"tag\">Notice how groups share the user's name?</span>\n        If you create a user without specifying a group, the system auto-creates a <b>group with the same name</b> as their <span class=\"term\" data-def=\"The primary group for a user, used for new file ownership.\">primary group</span>."
+  },
+  "t_153": {
+    "th": "สังเกตไหมว่า group ชื่อซ้ำกับ user",
+    "en": "Notice how groups share the user's name?"
+  },
+  "t_154": {
+    "th": "ถ้าอยากให้ <code>test</code> มีสิทธิ์เพิ่มเติมโดยไม่เปลี่ยนกลุ่มหลัก ให้เพิ่มเข้า <span class=\"term\" data-def=\"กลุ่มอื่นๆ ที่ user เป็นสมาชิกเพิ่มเติมนอกเหนือจากกลุ่มหลัก มีได้หลายกลุ่ม\">secondary group</span> ด้วยคำสั่ง:",
+    "en": "To give <code>test</code> additional rights, add them to a <span class=\"term\" data-def=\"Additional groups a user belongs to.\">secondary group</span> using:"
+  },
+  "t_155": {
+    "th": "<span class=\"tag\">ลืม -a เมื่อไหร่ ระวังเลย</span>\n        ถ้าใช้ <code>usermod -G newgroup user</code> โดย<b>ไม่มี</b> <code>-a</code> ระบบจะเอากลุ่มใหม่ไป <b>เขียนทับ</b> secondary group เดิมทั้งหมด ทำให้ user หลุดจากกลุ่มที่เคยอยู่แบบไม่รู้ตัว ต้องมี <code>-a</code> เสมอถ้าอยากจะ \"เพิ่ม\" ไม่ใช่ \"แทนที่\"",
+    "en": "<span class=\"tag\">Forget -a, face the consequences</span>\n        If you use <code>usermod -G newgroup user</code> <b>without</b> <code>-a</code>, it will <b>overwrite</b> all existing secondary groups. Always use <code>-a</code> (append)."
+  },
+  "t_156": {
+    "th": "ลืม -a เมื่อไหร่ ระวังเลย",
+    "en": "Forget -a, face the consequences"
+  },
+  "t_157": {
+    "th": "ไฟล์ที่เก็บข้อมูลผู้ใช้จริงๆ",
+    "en": "Files storing user info"
+  },
+  "t_158": {
+    "th": "/etc/passwd",
+    "en": "/etc/passwd"
+  },
+  "t_159": {
+    "th": "เก็บข้อมูลพื้นฐานของทุก user (uid, gid, home directory, shell) ไฟล์นี้ <b>ทุกคนอ่านได้</b> เพราะหลายโปรแกรมต้องใช้ข้อมูลนี้ตอน login — สมัยก่อนเก็บรหัสผ่านไว้ตรงนี้ด้วย แต่ไม่ปลอดภัยเลยย้ายออกแล้ว",
+    "en": "Stores basic user info. This file is <b>readable by everyone</b>."
+  },
+  "t_160": {
+    "th": "/etc/shadow",
+    "en": "/etc/shadow"
+  },
+  "t_161": {
+    "th": "เก็บรหัสผ่านที่ถูก <span class=\"term\" data-def=\"กระบวนการแปลงข้อมูลให้เป็นรหัสที่ถอดกลับไม่ได้ ใช้ตรวจสอบรหัสผ่านโดยไม่ต้องเก็บรหัสผ่านจริงไว้ที่ไหนเลย\">แฮช</span> ไว้แล้ว อ่านได้เฉพาะ root กับกลุ่ม shadow เท่านั้น เป็นเหตุผลว่าทำไมต้องใช้ <code>sudo</code> ถึงจะดูไฟล์นี้ได้",
+    "en": "Stores <span class=\"term\" data-def=\"Irreversible coded representation of a password.\">hashed</span> passwords. Only root can read this."
+  },
+  "t_162": {
+    "th": "ติดตั้งโปรแกรมด้วย APT",
+    "en": "Installing packages with APT"
+  },
+  "t_163": {
+    "th": "Ubuntu เก็บโปรแกรมไว้ใน <span class=\"term\" data-def=\"ที่เก็บรวมโปรแกรมสำเร็จรูปไว้ให้ดาวน์โหลดติดตั้งผ่านอินเทอร์เน็ต แทนที่จะต้องไปหาไฟล์ติดตั้งเองจากเว็บต่างๆ\">คลังโปรแกรม (repository)</span> แบ่งเป็น 4 หมวดตามระดับการดูแลและลิขสิทธิ์:",
+    "en": "Ubuntu stores programs in a <span class=\"term\" data-def=\"A central repository of software ready to be installed.\">repository</span> divided into 4 categories:"
+  },
+  "t_164": {
+    "th": "หมวด",
+    "en": "Category"
+  },
+  "t_165": {
+    "th": "ความหมาย",
+    "en": "Meaning"
+  },
+  "t_166": {
+    "th": "<code>main</code>",
+    "en": "<code>main</code>"
+  },
+  "t_167": {
+    "th": "Canonical (บริษัทเจ้าของ Ubuntu) ดูแลเอง เป็นโอเพนซอร์สฟรี — แนะนำใช้ตัวนี้ก่อน",
+    "en": "Officially supported by Canonical, open-source."
+  },
+  "t_168": {
+    "th": "<code>universe</code>",
+    "en": "<code>universe</code>"
+  },
+  "t_169": {
+    "th": "โอเพนซอร์สฟรีเหมือนกัน แต่ดูแลโดยคอมมูนิตี้ ไม่ใช่ Canonical โดยตรง",
+    "en": "Community-maintained open-source software."
+  },
+  "t_170": {
+    "th": "<code>restricted</code>",
+    "en": "<code>restricted</code>"
+  },
+  "t_171": {
+    "th": "ไดรเวอร์ของอุปกรณ์ฮาร์ดแวร์ที่เป็นกรรมสิทธิ์ (ไม่ใช่โอเพนซอร์ส)",
+    "en": "Proprietary hardware drivers."
+  },
+  "t_172": {
+    "th": "<code>multiverse</code>",
+    "en": "<code>multiverse</code>"
+  },
+  "t_173": {
+    "th": "มีข้อจำกัดด้านลิขสิทธิ์หรือกฎหมาย ต้องระวังเป็นพิเศษ",
+    "en": "Software with copyright or legal restrictions."
+  },
+  "t_174": {
+    "th": "apt กับ apt-get ต่างกันยังไง",
+    "en": "apt vs apt-get"
+  },
+  "t_175": {
+    "th": "ทั้งคู่ทำงานคล้ายกันมาก แต่ออกแบบมาให้คนละกลุ่มผู้ใช้: <b>apt</b> เขียนมาให้คนพิมพ์เองอ่านง่าย (interactive) ส่วน <b>apt-get</b> เขียนมาให้เขียนในสคริปต์ที่รันอัตโนมัติโดยไม่มีคนคอยตอบคำถาม — ถ้าพิมพ์เองแนะนำใช้ <code>apt</code> เป็นหลัก",
+    "en": "Both do the same thing: <b>apt</b> is better for humans (interactive), while <b>apt-get</b> is meant for automated scripts."
+  },
+  "t_176": {
+    "th": "ต้องการทำอะไร",
+    "en": "Goal"
+  },
+  "t_177": {
+    "th": "คำสั่ง apt",
+    "en": "apt command"
+  },
+  "t_178": {
+    "th": "อธิบาย",
+    "en": "Description"
+  },
+  "t_179": {
+    "th": "อัปเดตรายการ meta-data",
+    "en": "Update meta-data list"
+  },
+  "t_180": {
+    "th": "<code>apt update</code>",
+    "en": "<code>apt update</code>"
+  },
+  "t_181": {
+    "th": "ไปเช็คว่าคลังมีอะไรใหม่บ้าง <b>ไม่ได้ติดตั้งอะไรทั้งสิ้น</b>",
+    "en": "Checks for new updates, <b>does not install anything</b>."
+  },
+  "t_182": {
+    "th": "อัปเกรดทุกโปรแกรม",
+    "en": "Upgrade all packages"
+  },
+  "t_183": {
+    "th": "<code>apt upgrade</code>",
+    "en": "<code>apt upgrade</code>"
+  },
+  "t_184": {
+    "th": "อัปเดตทุกแพ็กเกจที่มีเวอร์ชันใหม่ (ปกติไม่แนะนำให้รันพร่ำเพรื่อ)",
+    "en": "Installs the latest versions for all available updates."
+  },
+  "t_185": {
+    "th": "ค้นหาแพ็กเกจ",
+    "en": "Search for a package"
+  },
+  "t_186": {
+    "th": "<code>apt search foo</code>",
+    "en": "<code>apt search foo</code>"
+  },
+  "t_187": {
+    "th": "ค้นจากชื่อและคำอธิบาย",
+    "en": "Searches by name and description."
+  },
+  "t_188": {
+    "th": "ดูรายละเอียดแพ็กเกจ",
+    "en": "Show package details"
+  },
+  "t_189": {
+    "th": "<code>apt show foo</code>",
+    "en": "<code>apt show foo</code>"
+  },
+  "t_190": {
+    "th": "ขนาดไฟล์ ที่มา รายละเอียดต่างๆ",
+    "en": "Shows file size, source, etc."
+  },
+  "t_191": {
+    "th": "ดูโปรแกรมที่ติดตั้งแล้ว",
+    "en": "List installed packages"
+  },
+  "t_192": {
+    "th": "<code>apt list --installed</code>",
+    "en": "<code>apt list --installed</code>"
+  },
+  "t_193": {
+    "th": "—",
+    "en": "—"
+  },
+  "t_194": {
+    "th": "ติดตั้ง",
+    "en": "Install"
+  },
+  "t_195": {
+    "th": "<code>apt install foo</code>",
+    "en": "<code>apt install foo</code>"
+  },
+  "t_196": {
+    "th": "ติดตั้งเวอร์ชันล่าสุด",
+    "en": "Installs the latest version."
+  },
+  "t_197": {
+    "th": "ถอนการติดตั้ง (เก็บ config)",
+    "en": "Uninstall (keep config)"
+  },
+  "t_198": {
+    "th": "<code>apt remove foo</code>",
+    "en": "<code>apt remove foo</code>"
+  },
+  "t_199": {
+    "th": "ลบตัวโปรแกรม แต่เก็บไฟล์ตั้งค่าไว้เผื่อลงใหม่",
+    "en": "Removes the program but keeps config files."
+  },
+  "t_200": {
+    "th": "ถอนแบบล้างหมด",
+    "en": "Complete uninstall"
+  },
+  "t_201": {
+    "th": "<code>apt purge foo</code>",
+    "en": "<code>apt purge foo</code>"
+  },
+  "t_202": {
+    "th": "ลบทั้งโปรแกรมและไฟล์ตั้งค่าทิ้งด้วย",
+    "en": "Removes the program AND its config files."
+  },
+  "t_203": {
+    "th": "<span class=\"tag\">ข้อผิดพลาดที่พบบ่อยที่สุดของหัวข้อนี้</span>\n        <code>apt update</code> ≠ <code>apt upgrade</code> ชื่อคล้ายกันมากแต่ทำคนละอย่าง <b>update</b> แค่รีเฟรชว่ามีอะไรใหม่ (เหมือนเช็คเมนูร้านอาหาร) ส่วน <b>upgrade</b> คือติดตั้งของใหม่จริงๆ (เหมือนสั่งอาหารจากเมนู) ต้อง update ก่อนเสมอ เพื่อให้เครื่องรู้ว่ามีเวอร์ชันใหม่ให้ upgrade",
+    "en": "<span class=\"tag\">Most common mistake</span>\n        <code>apt update</code> ≠ <code>apt upgrade</code>. <b>update</b> only checks what's new (like checking a menu), while <b>upgrade</b> actually installs them."
+  },
+  "t_204": {
+    "th": "ข้อผิดพลาดที่พบบ่อยที่สุดของหัวข้อนี้",
+    "en": "Most common mistake"
+  },
+  "t_205": {
+    "th": "เจาะจงเวอร์ชันที่จะติดตั้ง",
+    "en": "Specifying a version"
+  },
+  "t_206": {
+    "th": "ถ้าไม่ระบุเวอร์ชัน ระบบจะติดตั้งตัวล่าสุดเสมอ การใส่ <code>=เวอร์ชัน</code> ต่อท้ายชื่อแพ็กเกจ คือวิธีบังคับให้ได้เวอร์ชันที่ต้องการเป๊ะๆ ซึ่งมีประโยชน์มากเวลาต้องการเวอร์ชันเก่าที่เข้ากันได้กับระบบที่มีอยู่แล้ว",
+    "en": "Use <code>=version</code> after the package name to install a specific older version."
+  },
+  "t_207": {
+    "th": "systemd — ตัวจัดการโปรแกรมเบื้องหลัง",
+    "en": "systemd — Background Service Manager"
+  },
+  "t_208": {
+    "th": "ลองนึกภาพเว็บเซิร์ฟเวอร์: มันต้องทำงาน <b>ตลอดเวลา</b> ไม่ใช่แค่ตอนที่เราเปิดเทอร์มินัลอยู่ โปรแกรมที่ทำงานแบบ <span class=\"term\" data-def=\"โปรแกรมที่ทำงานอยู่เบื้องหลังตลอดเวลา ไม่ต้องมีคนเปิดหน้าจอค้างไว้ รอรับคำขอ (request) เข้ามาแล้วค่อยตอบสนอง\">background (service)</span> แบบนี้ต้องมีตัวจัดการคอยดูแล — นั่นคือหน้าที่ของ <code>systemd</code>",
+    "en": "A web server needs to run <b>constantly</b>. Programs running in the <span class=\"term\" data-def=\"A program running continuously in the background.\">background (service)</span> need a manager — that's <code>systemd</code>."
+  },
+  "t_209": {
+    "th": "<span class=\"tag\">systemd คืออะไรกันแน่</span>\n        เวลาเปิดเครื่อง โปรแกรมตัวแรกสุดที่ระบบสร้างขึ้นมาเรียกว่า <span class=\"term\" data-def=\"หมายเลขประจำตัวโพรเซส ทุกโพรเซสที่ทำงานในเครื่องจะมีเลขนี้ไม่ซ้ำกัน\">PID</span> <b>1</b> เสมอ — บน Ubuntu สมัยใหม่ โพรเซสนั้นคือ <code>systemd</code> หน้าที่หลักของมันคือ \"สร้างและดูแลโพรเซสอื่นๆ ทั้งหมดที่ตามมา\" เปรียบเหมือนหัวหน้าคนแรกที่มาถึงออฟฟิศแล้วค่อยๆ เรียกทีมงานคนอื่นเข้ามาทำงานทีละคน",
+    "en": "<span class=\"tag\">What exactly is systemd?</span>\n        When booting, the very first process gets <span class=\"term\" data-def=\"Process ID, unique to every process.\">PID</span> <b>1</b> — on modern Ubuntu, that's <code>systemd</code>. Its job is to spawn all other processes."
+  },
+  "t_210": {
+    "th": "systemd คืออะไรกันแน่",
+    "en": "What exactly is systemd?"
+  },
+  "t_211": {
+    "th": "คำสั่ง",
+    "en": "Command"
+  },
+  "t_212": {
+    "th": "ต้อง sudo ไหม",
+    "en": "Requires sudo?"
+  },
+  "t_213": {
+    "th": "<code>systemctl status foo</code>",
+    "en": "<code>systemctl status foo</code>"
+  },
+  "t_214": {
+    "th": "ดูสถานะของเซอร์วิส foo",
+    "en": "Check the status of service foo"
+  },
+  "t_215": {
+    "th": "ไม่ต้อง (แค่ดู ไม่ใช่ความลับ)",
+    "en": "No (just viewing)"
+  },
+  "t_216": {
+    "th": "<code>systemctl start foo</code>",
+    "en": "<code>systemctl start foo</code>"
+  },
+  "t_217": {
+    "th": "สั่งให้เริ่มทำงานตอนนี้เลย",
+    "en": "Start it right now"
+  },
+  "t_218": {
+    "th": "ต้อง",
+    "en": "Yes"
+  },
+  "t_219": {
+    "th": "<code>systemctl stop foo</code>",
+    "en": "<code>systemctl stop foo</code>"
+  },
+  "t_220": {
+    "th": "สั่งหยุดทำงานตอนนี้เลย",
+    "en": "Stop it right now"
+  },
+  "t_221": {
+    "th": "<code>systemctl restart foo</code>",
+    "en": "<code>systemctl restart foo</code>"
+  },
+  "t_222": {
+    "th": "หยุดแล้วเริ่มใหม่ทั้งหมด (การเชื่อมต่อที่ค้างอยู่จะหลุด)",
+    "en": "Stop then start (current connections will drop)"
+  },
+  "t_223": {
+    "th": "<code>systemctl reload foo</code>",
+    "en": "<code>systemctl reload foo</code>"
+  },
+  "t_224": {
+    "th": "อ่านค่าตั้งค่าใหม่ โดยไม่ต้องหยุดทำงาน (นุ่มนวลกว่า restart)",
+    "en": "Reload configs without stopping (smoother)"
+  },
+  "t_225": {
+    "th": "<code>systemctl enable foo</code>",
+    "en": "<code>systemctl enable foo</code>"
+  },
+  "t_226": {
+    "th": "ตั้งให้เริ่มทำงานอัตโนมัติตอนบูตเครื่องครั้งถัดไป",
+    "en": "Set it to start automatically on next boot"
+  },
+  "t_227": {
+    "th": "<code>systemctl disable foo</code>",
+    "en": "<code>systemctl disable foo</code>"
+  },
+  "t_228": {
+    "th": "ยกเลิกการเริ่มอัตโนมัติตอนบูต",
+    "en": "Stop it from auto-starting on next boot"
+  },
+  "t_229": {
+    "th": "enabled/disabled กับ active/inactive คือคนละเรื่องกัน!",
+    "en": "enabled/disabled vs active/inactive are different things!"
+  },
+  "t_230": {
+    "th": "นี่คือจุดที่นักเรียนสับสนกันมากที่สุดในคลาสนี้ เซอร์วิสหนึ่งตัวมี \"สถานะ\" อยู่ 2 มิติที่ <b>เป็นอิสระต่อกันโดยสิ้นเชิง</b>:",
+    "en": "A service has two separate status dimensions:"
+  },
+  "t_231": {
+    "th": "enabled / disabled",
+    "en": "enabled / disabled"
+  },
+  "t_232": {
+    "th": "จะทำงาน<b>ตอนบูตเครื่องครั้งถัดไป</b>หรือเปล่า — เป็นแค่ \"แผนการในอนาคต\"",
+    "en": "Will it run <b>on next boot</b>? (Future plan)"
+  },
+  "t_233": {
+    "th": "active / inactive",
+    "en": "active / inactive"
+  },
+  "t_234": {
+    "th": "กำลังทำงานอยู่<b>ตอนนี้</b>หรือเปล่า — เป็น \"สถานะปัจจุบันจริงๆ\"",
+    "en": "Is it running <b>right now</b>? (Current state)"
+  },
+  "t_235": {
+    "th": "ลองกดตารางด้านล่างดูว่าแต่ละสถานการณ์ที่เจอในแล็บวันนี้ อธิบายว่าอะไร:",
+    "en": "Check the scenarios from today's lab below:"
+  },
+  "t_236": {
+    "th": "<b>โจทย์จากแล็บจริง:</b> เซอร์วิส <code>cron</code> กำลัง active อยู่ (ทำงานปกติ) เราสั่ง <code>sudo systemctl disable cron</code> แล้วเช็คสถานะทันที มันจะเป็น active หรือ inactive? แล้วถ้า <code>reboot</code> เครื่องแล้วเช็คใหม่ล่ะ?",
+    "en": "<b>Lab Scenario:</b> Service <code>cron</code> is active. We run <code>sudo systemctl disable cron</code> and check the status. Is it active or inactive? What if we reboot?"
+  },
+  "t_237": {
+    "th": "<b>ทันทีหลัง disable:</b> ยัง <b>active</b> อยู่! เพราะ disable แค่บอกว่า \"ครั้งหน้าที่บูตอย่าเปิดนะ\" มันไม่ได้ไปหยุดโพรเซสที่กำลังรันอยู่ตอนนี้เลย<br><br>\n          <b>หลัง reboot:</b> กลายเป็น <b>inactive</b> เพราะตอนบูตใหม่ ระบบเช็คว่า disabled อยู่ ก็เลยไม่เปิดให้<br><br>\n          บทเรียน: <code>disable</code> ≠ <code>stop</code> ถ้าอยากหยุดทำงานตอนนี้ด้วย ต้องสั่ง <code>stop</code> เพิ่มอีกคำสั่งแยกต่างหาก",
+    "en": "<b>Immediately after disable:</b> Still <b>active</b>! It only affects the next boot.<br><br>\n          <b>After reboot:</b> Becomes <b>inactive</b>.<br><br>\n          Lesson: <code>disable</code> ≠ <code>stop</code>."
+  },
+  "t_238": {
+    "th": "reload vs restart — ต่างกันตรงไหน",
+    "en": "reload vs restart — What's the difference?"
+  },
+  "t_239": {
+    "th": "ทั้งคู่ใช้ตอนแก้ไฟล์ตั้งค่าของเซอร์วิสแล้วอยากให้มีผล แต่ผลลัพธ์ต่อผู้ใช้จริงต่างกัน:",
+    "en": "Both apply new config changes, but the impact differs:"
+  },
+  "t_240": {
+    "th": "reload",
+    "en": "reload"
+  },
+  "t_241": {
+    "th": "เซอร์วิสยังทำงานต่อเนื่อง แค่ไปอ่านไฟล์ตั้งค่าใหม่มาใช้ การเชื่อมต่อที่มีอยู่ไม่หลุด — เลือกใช้อันนี้ก่อนถ้าเซอร์วิสรองรับ",
+    "en": "Service stays running and just reads the new config. Connections don't drop."
+  },
+  "t_242": {
+    "th": "restart",
+    "en": "restart"
+  },
+  "t_243": {
+    "th": "ปิดเซอร์วิสทั้งหมดแล้วเปิดใหม่ทั้งกระบวนการ ระหว่างนั้นเซอร์วิสจะหายไปชั่วครู่ และการเชื่อมต่อที่ค้างอยู่จะหลุดหมด",
+    "en": "Service fully shuts down and starts up again. Connections will drop."
+  },
+  "t_244": {
+    "th": "แบบทดสอบตัวเอง — เช็กก่อนไปสอบจริง",
+    "en": "Self-Test Quiz"
+  },
+  "t_245": {
+    "th": "ลองตอบ 6 ข้อนี้ดู เป็นจุดที่เพื่อนร่วมคลาสตอบผิดกันเยอะที่สุดตอนเรียนจริง ถ้าตอบถูกหมดแปลว่าพร้อมสำหรับคลาสถัดไปแล้ว",
+    "en": "Try these 6 questions that students frequently get wrong. If you pass, you're ready!"
+  },
+  "t_246": {
+    "th": "สรุปคำสั่งสำคัญของวันนี้ทั้งหมดในหน้าเดียว เปิดทบทวนเร็วๆ ก่อนสอบได้เลย",
+    "en": "Summary of all important commands from today. Perfect for quick review before exams."
+  },
+  "t_247": {
+    "th": "<i data-lucide=\"clock\" class=\"icon-sm\"></i> History &amp; เทอร์มินัล",
+    "en": "<i data-lucide=\"clock\" class=\"icon-sm\"></i> History &amp; Terminal"
+  },
+  "t_248": {
+    "th": "คำสั่งล่าสุด",
+    "en": "Latest command"
+  },
+  "t_249": {
+    "th": "คำสั่งหมายเลข N",
+    "en": "Command number N"
+  },
+  "t_250": {
+    "th": "อาร์กิวเมนต์ตัวสุดท้าย",
+    "en": "Last argument"
+  },
+  "t_251": {
+    "th": "ค้นประวัติย้อนหลัง",
+    "en": "Reverse search"
+  },
+  "t_252": {
+    "th": "Undo",
+    "en": "Undo"
+  },
+  "t_253": {
+    "th": "ให้ค่าตั้งใหม่มีผลทันที",
+    "en": "Apply bashrc changes immediately"
+  },
+  "t_254": {
+    "th": "<i data-lucide=\"key\" class=\"icon-sm\"></i> สิทธิ์และผู้ใช้",
+    "en": "<i data-lucide=\"key\" class=\"icon-sm\"></i> Rights and Users"
+  },
+  "t_255": {
+    "th": "ยืมสิทธิ์ root ชั่วคราว",
+    "en": "Borrow root rights"
+  },
+  "t_256": {
+    "th": "สวมบัญชีคนอื่นเต็มรูปแบบ",
+    "en": "Fully switch account"
+  },
+  "t_257": {
+    "th": "ดู uid/gid ปัจจุบัน",
+    "en": "Check current uid/gid"
+  },
+  "t_258": {
+    "th": "ดูว่าใคร login จริง",
+    "en": "Check original login user"
+  },
+  "t_259": {
+    "th": "สร้างผู้ใช้",
+    "en": "Create a user"
+  },
+  "t_260": {
+    "th": "เพิ่มเข้ากลุ่ม (ห้ามลืม -a)",
+    "en": "Add to group (don't forget -a)"
+  },
+  "t_261": {
+    "th": "โอนเจ้าของ",
+    "en": "Transfer ownership"
+  },
+  "t_262": {
+    "th": "<i data-lucide=\"package\" class=\"icon-sm\"></i> APT",
+    "en": "<i data-lucide=\"package\" class=\"icon-sm\"></i> APT"
+  },
+  "t_263": {
+    "th": "รีเฟรชรายการ (ไม่ติดตั้ง)",
+    "en": "Refresh list (no install)"
+  },
+  "t_264": {
+    "th": "อัปเกรดทุกแพ็กเกจ",
+    "en": "Upgrade all packages"
+  },
+  "t_265": {
+    "th": "ติดตั้งเวอร์ชันเจาะจง",
+    "en": "Install specific version"
+  },
+  "t_266": {
+    "th": "ดูที่ติดตั้งแล้ว",
+    "en": "View installed packages"
+  },
+  "t_267": {
+    "th": "ลบ (เก็บ config)",
+    "en": "Uninstall (keep config)"
+  },
+  "t_268": {
+    "th": "ลบล้างหมด",
+    "en": "Complete uninstall"
+  },
+  "t_269": {
+    "th": "<i data-lucide=\"settings\" class=\"icon-sm\"></i> systemd",
+    "en": "<i data-lucide=\"settings\" class=\"icon-sm\"></i> systemd"
+  },
+  "t_270": {
+    "th": "ดูสถานะ",
+    "en": "Check status"
+  },
+  "t_271": {
+    "th": "เปิด/ปิดตอนนี้",
+    "en": "Start/Stop now"
+  },
+  "t_272": {
+    "th": "เปิด/ปิดตอนบูต",
+    "en": "Enable/Disable on boot"
+  },
+  "t_273": {
+    "th": "อ่าน config ใหม่ ไม่ตัดการเชื่อมต่อ",
+    "en": "Reload configs safely"
+  },
+  "t_274": {
+    "th": "ปิดแล้วเปิดใหม่ทั้งหมด",
+    "en": "Restart service completely"
+  },
+  "t_275": {
+    "th": "ดูโปรแกรมที่เป็น PID 1",
+    "en": "Find the PID 1 process"
+  },
+  "t_276": {
+    "th": "<span class=\"tag\">ก่อนเข้าห้องสอบ</span>\n        ห้องสอบไม่มีเน็ต ไม่มี AI ไม่มีเพื่อนให้ถาม สิ่งที่มีให้คือ <b>autocomplete (Tab)</b> และ <b>--help / man page</b> เท่านั้น ฉะนั้นสิ่งที่ควรฝึกจริงๆ ไม่ใช่ \"จำคำสั่งให้ได้ทุกตัว\" แต่คือ \"เข้าใจว่าทำไมต้องใช้คำสั่งนี้ในสถานการณ์นี้\" แล้วปล่อยให้ Tab ช่วยเติมรายละเอียดที่จำไม่ได้",
+    "en": "<span class=\"tag\">Before the exam</span>\n        Exams have no internet, AI, or friends. You only have <b>autocomplete (Tab)</b> and <b>--help / man page</b>. Focus on understanding the 'why' rather than memorizing every single command option."
+  },
+  "t_277": {
+    "th": "ก่อนเข้าห้องสอบ",
+    "en": "Before the exam"
+  },
+  "t_278": {
+    "th": "สรุปจากคลาส 1 วิชา INT134 System Deployment · ทำเพื่อใช้ทบทวนก่อนสอบเท่านั้น",
+    "en": "Summary from INT134 System Deployment Class 1 · For review purposes only"
+  },
+  "t_279": {
+    "th": "เครื่องคอมพิวเตอร์เสมือน ที่จำลองเครื่องจริงขึ้นมาบนเซิร์ฟเวอร์ ใช้งานเหมือนมีคอมพิวเตอร์ทั้งเครื่องเป็นของตัวเอง",
+    "en": "<i data-lucide=\"arrow-up\" class=\"icon-sm\"></i>"
+  },
+  "t_280": {
+    "th": "โปรโตคอลสำหรับเชื่อมต่อและควบคุมเครื่องอื่นจากระยะไกลผ่านบรรทัดคำสั่ง อย่างปลอดภัย",
+    "en": "<b>Enabled + Active</b> — Normal state for running services like ssh or cron: currently running, and set to start on boot."
+  },
+  "t_281": {
+    "th": "Shell แบบที่เรามีการโต้ตอบกับมันตรงๆ ผ่านการพิมพ์คำสั่งแล้วเห็นผลทันที ตรงข้ามกับสคริปต์ที่รันแบบอัตโนมัติไม่มีคนคอยพิมพ์",
+    "en": "<b>Enabled + Inactive</b> — Set to start on boot, but currently not running! Usually means the service crashed."
+  },
+  "t_282": {
+    "th": "ย่อมาจาก super user do แปลว่า 'ทำในฐานะซูเปอร์ยูสเซอร์' คือขอยกระดับสิทธิ์ชั่วคราวแค่คำสั่งเดียว",
+    "en": "<b>Disabled + Active</b> — Just disabled, but hasn't been rebooted or stopped yet, so it's still running."
+  },
+  "t_283": {
+    "th": "กลุ่มหลักของผู้ใช้คนหนึ่ง ทุกคนต้องมีกลุ่มหลักเสมอ 1 กลุ่ม ใช้กำหนดความเป็นเจ้าของตอนสร้างไฟล์ใหม่",
+    "en": "<b>Disabled + Inactive</b> — Completely off: not running now, and won't start on next boot."
+  },
+  "t_284": {
+    "th": "กลุ่มอื่นๆ ที่ user เป็นสมาชิกเพิ่มเติมนอกเหนือจากกลุ่มหลัก มีได้หลายกลุ่ม",
+    "en": "1. Logged in as sysadmin, what is the result of sudo who am i?"
+  },
+  "t_285": {
+    "th": "กระบวนการแปลงข้อมูลให้เป็นรหัสที่ถอดกลับไม่ได้ ใช้ตรวจสอบรหัสผ่านโดยไม่ต้องเก็บรหัสผ่านจริงไว้ที่ไหนเลย",
+    "en": "who am i checks 'who actually logged into the terminal', ignoring sudo rights, so it always returns sysadmin."
+  },
+  "t_286": {
+    "th": "ที่เก็บรวมโปรแกรมสำเร็จรูปไว้ให้ดาวน์โหลดติดตั้งผ่านอินเทอร์เน็ต แทนที่จะต้องไปหาไฟล์ติดตั้งเองจากเว็บต่างๆ",
+    "en": "2. Created a folder with sudo mkdir but can't write to it (Permission denied). Why?"
+  },
+  "t_287": {
+    "th": "โปรแกรมที่ทำงานอยู่เบื้องหลังตลอดเวลา ไม่ต้องมีคนเปิดหน้าจอค้างไว้ รอรับคำขอ (request) เข้ามาแล้วค่อยตอบสนอง",
+    "en": "When created with sudo, the owner is root. You must use chown to claim ownership."
+  },
+  "t_288": {
+    "th": "หมายเลขประจำตัวโพรเซส ทุกโพรเซสที่ทำงานในเครื่องจะมีเลขนี้ไม่ซ้ำกัน",
+    "en": "3. sudo usermod -G newgroup test (without -a). What happens to the old groups?"
+  }
+}
