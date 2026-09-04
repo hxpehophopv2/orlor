@@ -13,7 +13,28 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script type="module" crossorigin src="/orlor/assets/index-CsCqhQe0.js"></script>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafrex/spa-github-pages
+      (function(l) {
+        if (l.search[1] === 'p') {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+          });
+          if (q.p !== undefined) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + (q.p || '') +
+              (q.q ? ('?' + q.q) : '') +
+              l.hash
+            );
+          }
+        }
+      }(window.location))
+    </script>
+    <script type="module" crossorigin src="/orlor/assets/index-BDb4N46T.js"></script>
     <link rel="stylesheet" crossorigin href="/orlor/assets/index-DBAuaT_L.css">
   </head>
   <body>
