@@ -1150,5 +1150,33 @@
   "t_288": {
     "th": "หมายเลขประจำตัวโพรเซส ทุกโพรเซสที่ทำงานในเครื่องจะมีเลขนี้ไม่ซ้ำกัน",
     "en": "3. sudo usermod -G newgroup test (without -a). What happens to the old groups?"
+  },
+  "c4_srv_title": {
+    "th": "ทำไมต้องเป็น /srv/school/?",
+    "en": "Why /srv/school/?"
+  },
+  "c4_srv_p1": {
+    "th": "<span class=\"tag\">FHS: Filesystem Hierarchy Standard</span><br/>ใน Linux <span class=\"term\" data-def=\"Service Data — โฟลเดอร์ที่ใช้เก็บข้อมูลสำหรับบริการที่ระบบนี้มีให้ เช่น โค้ดของเว็บ หรือฐานข้อมูลของแอป\">/srv/</span> มีไว้สำหรับเก็บข้อมูลของ 'บริการ' (Services) ที่ระบบนี้รันอยู่",
+    "en": "<span class=\"tag\">FHS: Filesystem Hierarchy Standard</span><br/>In Linux, <span class=\"term\" data-def=\"Service Data — directory for site-specific data served by this system\">/srv/</span> is meant for 'Service Data'—data provided by the services running on the system."
+  },
+  "c4_srv_p2": {
+    "th": "บางคนชอบเก็บโค้ดเว็บไว้ใน <code class=\"language-bash\">~/school</code> (Home directory) ซึ่ง <b>ไม่แนะนำเด็ดขาด</b> เพราะ Home มีไว้สำหรับไฟล์ส่วนตัวของผู้ใช้ ถ้าคุณลาออกจากบริษัท คนอื่นจะเข้าไปแก้โค้ดลำบาก สิทธิ์การเข้าถึงก็จัดการยาก การใช้ <code>/srv/</code> เป็นการประกาศว่านี่คือโปรเจกต์ระดับระบบ ไม่ใช่ของส่วนตัว",
+    "en": "Many people put web code in <code class=\"language-bash\">~/school</code> (Home directory). This is <b>highly discouraged</b>. Home is for personal files. If you leave the company, others will struggle to access it. Using <code>/srv/</code> declares this as a system-level project, not a personal one."
+  },
+  "c5_srv_title": {
+    "th": "ความต่างของ /srv/ กับ /var/www/",
+    "en": "/srv/ vs /var/www/"
+  },
+  "c5_srv_p1": {
+    "th": "ในคลาสนี้เราใช้ <code>/srv/school/frontend/</code> เป็นเสมือน <b>พื้นที่ทำงานส่วนตัว</b> (Private Workspace) ที่มีโค้ดดิบๆ ไฟล์ตั้งค่า และคอมเมนต์ที่คนทั่วไปไม่ควรเห็น",
+    "en": "Here, <code>/srv/school/frontend/</code> acts as our <b>Private Workspace</b>, containing raw code, config files, and comments that the public shouldn't see."
+  },
+  "c5_srv_p2": {
+    "th": "ส่วน <code>/var/www/school/</code> คือ <b>หน้าต่างโชว์สินค้า</b> (Public Document Root) เราจะใช้ <code>rsync</code> เพื่อคัดลอกเฉพาะไฟล์ที่พร้อมใช้งานและปลอดภัยไปไว้ที่นั่น แล้วให้ nginx เสิร์ฟจากโฟลเดอร์นั้นเท่านั้น ห้ามเอา nginx ไปชี้ที่ <code>/srv/</code> เด็ดขาด เพราะอาจทำให้รหัสผ่านหลุดได้!",
+    "en": "Conversely, <code>/var/www/school/</code> is the <b>Public Document Root</b>. We use <code>rsync</code> to copy ONLY safe, ready-to-use files there, and point nginx to it. Never point nginx directly to <code>/srv/</code>, as it could expose your passwords!"
+  },
+  "c3_www_note": {
+    "th": "<span class=\"tag\">ที่เก็บไฟล์เว็บ</span>มาตรฐานของ Ubuntu คือ <code>/var/www/html/</code> แต่ถ้าเป็นระบบที่มีการแยกโปรเจกต์ชัดเจน อาจใช้ <code>/srv/</code> (Service Data) แทน",
+    "en": "<span class=\"tag\">Web Directory</span>Ubuntu's standard is <code>/var/www/html/</code>, but for clearly separated projects, <code>/srv/</code> (Service Data) is often preferred."
   }
 }
